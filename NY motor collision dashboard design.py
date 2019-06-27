@@ -4,14 +4,11 @@ import dash_html_components as html
 import plotly.graph_objs as go
 from dash.dependencies import Input, Output
 import folium
-
-
 import numpy as np
 import pandas as pd
 from datetime import datetime
 import plotly
 from plotly import tools
-
 
 data_2013 = pd.read_csv('NY collisions 2013 data')
 data_2014 = pd.read_csv('NY collisions 2014 data')
@@ -24,8 +21,6 @@ all_data = [data_2013, data_2014, data_2015, data_2016]
 boroughs = ['Manhattan', 'Brooklyn', 'Queens', 'Bronx', 'Staten Island']
 
 app = dash.Dash()
-
-
 
 app.layout = html.Div([
                        html.H1(children = 'NY boroughs vehicle collision data for 2013-2016',
@@ -56,8 +51,6 @@ app.layout = html.Div([
                                     {'label': 'Monthly', 'value': 'Monthly'}
                                     ], value = 'Monthly',  style={'width': '48%'}),
                         dcc.Graph(id = 'Time_graph')]),
-                        
-
 
                         html.Div([
                         html.H2('Breakdown of Injuries data'),
@@ -91,10 +84,7 @@ app.layout = html.Div([
                         
 ], style = {'columnCount': 2})
 
-                        
-                        
-
-
+        
 @app.callback(
     Output('yearly_graph', 'figure'),
     [Input('Select Year', 'value')])
@@ -140,8 +130,7 @@ def update_graph(year):
                                                               'rgba(16, 112, 2, 0.8)', 'rgba(80, 26, 80, 0.8)', 'rgba(255, 128, 2, 0.8)'])
                                        )
 
-##    data = [trace1, trace2]
-##    layout =go.Layout(barmode = 'group', height = 500, width = 1000)
+
     
     fig = tools.make_subplots(rows=1, cols=2)
     fig.append_trace(trace1, 1, 1)
@@ -149,23 +138,12 @@ def update_graph(year):
     layout = fig['layout'].update(height=500, width=900, title='Total injuries (left) and per capita injuries (right) in NY boroughs for {}'.format(year),
                                   showlegend = False)
 
-
-
-    
     return {'data': fig, 'layout': layout}
     
-   
-
-
-
-
+    
 @app.callback(
     Output('Category_graph', 'figure'),
     [Input('Year selected', 'value'), Input('Select Category', 'value')])
-
-
-
-    
 
 def cat_injury(year, category):
     data_2013 = pd.read_csv('NY collisions 2013 data')
@@ -181,8 +159,6 @@ def cat_injury(year, category):
     queens = current_data[current_data['UPDATED BOROUGH'] == 'QUEENS']
     bronx = current_data[current_data['UPDATED BOROUGH'] == 'BRONX']
     staten_island = current_data[current_data['UPDATED BOROUGH'] == 'STATEN ISLAND']
-
-
 
     if category == 'Pedestrian':
         boroughs = ['Manhattan', 'Brooklyn', 'Queens', 'Bronx', 'Staten Island']
@@ -247,14 +223,9 @@ def time_cat(year, category):
         return {'data': [trace1],'layout': go.Layout(title = 'Monthly distribution of collisions in NY boroughs for {}'.format(year), height = 500, width = 900)}
 
 
-
 @app.callback(
     Output('map', 'srcDoc'),
     [Input('Select a Year', 'value')])
-
-
-
-
 
 def nyc_map(year):
     NY_COORDINATES = (40.730610, -73.935242)
@@ -292,10 +263,6 @@ def nyc_map(year):
     location_map.save('location_map.html')
     return open('location_map.html', 'r').read()
     
-        
-
-
-
-    
+           
 if __name__ == '__main__':
     app.run_server(debug=True)  
