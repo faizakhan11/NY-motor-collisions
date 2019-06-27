@@ -166,7 +166,7 @@ def update_graph(year):
 
 
     
-#turn 2
+
 def cat_injury(year, category):
     data_2013 = pd.read_csv('NY collisions 2013 data')
     data_2014 = pd.read_csv('NY collisions 2014 data')
@@ -220,7 +220,7 @@ def cat_injury(year, category):
                                        orientation = 'h')
 
         return {'data': [trace1],'layout': go.Layout(title = 'Motorist injuries in NY boroughs for {}'.format(year), height=500, width=900)}
-#turn 3: day of the week/month of the year
+
 
 @app.callback(
     Output('Time_graph', 'figure'),
