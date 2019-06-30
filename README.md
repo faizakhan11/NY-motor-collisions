@@ -14,7 +14,7 @@ I worked on NYC Motor Vehicle Collisions dataset comprising 1.4 million rows and
 
 I built a dashboard displaying information about number of injuries/per capita injuries along with the breakdown of injury type in NY boroughs motor collisions for 2013-2016. I looked at daily/monthly trends in collisions as well as street intersections which had the highest number of collisions occurring at them. 
 
-![](nyc_collisions_dashboard.gif)
+![Demo of the dashboard](nyc_collisions_dashboard.gif)
 
 ## Workflow:
 
