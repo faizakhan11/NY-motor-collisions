@@ -1,6 +1,6 @@
 # NY-motor-collisions
 
-I worked on NYC Motor Vehicle Collisions dataset comprising 1.4 million rows and spanning 2013-2016. I obtained this data from [NYC Open Data api.](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions/h9gi-nx95)
+I worked on NYC Motor Vehicle Collisions dataset comprising 1.4 million rows and spanning 2013-2016. I obtained this data from [NYC OpenData api.](https://data.cityofnewyork.us/Public-Safety/NYPD-Motor-Vehicle-Collisions/h9gi-nx95)
 
 ## Tools used:
 
@@ -14,7 +14,7 @@ I worked on NYC Motor Vehicle Collisions dataset comprising 1.4 million rows and
 
 I built a dashboard displaying information about number of injuries/per capita injuries along with the breakdown of injury type in NY boroughs motor collisions for 2013-2016. I looked at daily/monthly trends in collisions as well as street intersections which had the highest number of collisions occurring at them. 
 
-![Demo of the dashboard](nyc_collisions_dashboard.gif)
+![](nyc_collisions_dashboard.gif)
 
 ## Workflow:
 
